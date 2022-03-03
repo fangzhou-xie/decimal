@@ -1,7 +1,7 @@
 #' Decimal Operators
 #' 
 #' `+`, `-`, `*`, `/` operators for decimal operations
-#' 
+
 #' @export
 `+.decimal` <- function(e1, e2) {
   operator_function(e1, e2, decimal_add)

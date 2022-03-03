@@ -13,6 +13,8 @@ as.decimal(x)
 is.decimal(x)
 }
 \arguments{
+\item{x, }{character vector}
+
 \item{digits, }{int, nubmer of digits}
 
 \item{decimal_sep, }{separator for decimal place}

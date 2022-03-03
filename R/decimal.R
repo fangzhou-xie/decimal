@@ -32,6 +32,7 @@ decimal <- function(x, digits = NULL, decimal_sep = ".", thousand_sep = ",") {
 }
 
 #' @rdname decimal
+#' @param x, character vector
 #' @export
 as.decimal <- function(x) {
   if (is.numeric(x) || (is.character(x) && all(numbers_only(x)))) {
@@ -42,22 +43,12 @@ as.decimal <- function(x) {
 }
 
 #' @rdname decimal
+#' @param x, character vector
 #' @export
 is.decimal <- function(x) {
   inherits(x, "decimal")
 }
 
-
-#' @export
-print.decimal <- function(x, max = getOption("max.print")) {
-  x <- x[seq_len(min(length(x), max))]
-  if (length(x) == 0) {
-    print(character(0))
-  } else {
-    print(as.character(x))
-  }
-  invisible(x)
-}
 
 numbers_only <- function(x) {
   suppressWarnings(!is.na(as.numeric(as.character(x))))

@@ -6,7 +6,7 @@ using namespace Rcpp;
 #include "utils.h"
 
 // [[Rcpp::export]]
-std::string sum_decimal(std::vector<std::string> s) {
+std::string sum_decimal_cpp(std::vector<std::string> s) {
   
   decimal<10> out;
   

@@ -12,10 +12,10 @@ print.decimal <- function(x, max = getOption("max.print")) {
 
 #' @export
 sum.decimal <- function(x, ...) {
-  decimal(sub("\\.?0+$", "", sum_decimal(x)))
+  decimal(sub("\\.?0+$", "", sum_decimal_cpp(x)))
 }
 
-#' @export
-sum_decimal <- function(x, ...) {
-  decimal(sub("\\.?0+$", "", sum_decimal(x)))
-}
+#' #' @export
+#' sum_decimal <- function(x) {
+#'   decimal(sub("\\.?0+$", "", sum_decimal(x)))
+#' }

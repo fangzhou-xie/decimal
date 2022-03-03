@@ -3,6 +3,16 @@
 #' `+`, `-`, `*`, `/` operators for decimal operations
 
 #' @export
+ `[.decimal` <- function(x, i, ...) {
+   decimal(NextMethod("["))
+ }
+ 
+ #' @export
+ `[[.decimal` <- function(x, i, ...) {
+   decimal(NextMethod("[["))
+ }
+
+#' @export
 `+.decimal` <- function(e1, e2) {
   operator_function(e1, e2, decimal_add)
 }
@@ -54,6 +64,8 @@
 
 operator_function <- function(e1, e2, func, return_logical = FALSE) {
   if (length(e1) != length(e2)) stop("Vector size not equal!")
+  if (!inherits(e1, "decimal")) e1 <- decimal(e1)
+  if (!inherits(e2, "decimal")) e2 <- decimal(e2)
   e <- func(e1, e2)
   if (return_logical) e else decimal(sub("\\.?0+$", "", e))
 }

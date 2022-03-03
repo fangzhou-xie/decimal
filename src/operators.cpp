@@ -3,14 +3,16 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-#include "decimal.h"
-using namespace dec;
+#include "utils.h"
 
-
-decimal<10> read_decimal(std::string s) {
-  decimal<10> d = fromString<decimal<10>>(s); 
-  return d; 
-}
+// #include "decimal.h"
+// using namespace dec;
+// 
+// 
+// decimal<10> read_decimal(std::string s) {
+//   decimal<10> d = fromString<decimal<10>>(s); 
+//   return d; 
+// }
 
 
 // [[Rcpp::export]]

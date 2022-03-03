@@ -55,5 +55,5 @@
 operator_function <- function(e1, e2, func, return_logical = FALSE) {
   if (length(e1) != length(e2)) stop("Vector size not equal!")
   e <- func(e1, e2)
-  if (return_logical) e else sub("\\.?0+$", "", e)
+  if (return_logical) e else decimal(sub("\\.?0+$", "", e))
 }

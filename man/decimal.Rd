@@ -12,6 +12,13 @@ as.decimal(x)
 
 is.decimal(x)
 }
+\arguments{
+\item{digits, }{int, nubmer of digits}
+
+\item{decimal_sep, }{separator for decimal place}
+
+\item{thousand_sep, }{separator for thousand place}
+}
 \description{
 `decimal()` converts a valid vector into decimal class;
 `is.decimal()` tests whether the object is decimal class;

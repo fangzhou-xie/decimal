@@ -2,10 +2,10 @@
 library(testthat)
 
 test_that("operator behavior", {
-  expect_equal(decimal("2.3") + decimal("1.0"), "3.3")
-  expect_equal(decimal("5.7") - decimal("1.1"), "4.6")
-  expect_equal(decimal("1.0") / decimal("2.0"), "0.5")
-  expect_equal(decimal("2.0") * decimal("2.0"), "4")
+  expect_equal(decimal("2.3") + decimal("1.0"), decimal("3.3"))
+  expect_equal(decimal("5.7") - decimal("1.1"), decimal("4.6"))
+  expect_equal(decimal("1.0") / decimal("2.0"), decimal("0.5"))
+  expect_equal(decimal("2.0") * decimal("2.0"), decimal("4"))
   expect_equal(decimal("1.0") == decimal(1), TRUE)
   expect_equal(decimal("1.0") == decimal("1.000"), TRUE)
   expect_equal(decimal("1.0") <= decimal(1), TRUE)
@@ -22,4 +22,5 @@ test_that("operator behavior", {
   expect_equal(decimal("1.0") >= decimal("1.011"), FALSE)
   expect_equal(decimal("0.99") >= decimal(1), FALSE)
   expect_equal(decimal("0.99") >= decimal("1.0"), FALSE)
+  expect_equal(sum(decimal(c("0.2", "0.1"))), decimal("0.3"))
 })

@@ -11,6 +11,17 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// sum_decimal
+std::string sum_decimal(std::vector<std::string> s);
+RcppExport SEXP _decimal_sum_decimal(SEXP sSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< std::vector<std::string> >::type s(sSEXP);
+    rcpp_result_gen = Rcpp::wrap(sum_decimal(s));
+    return rcpp_result_gen;
+END_RCPP
+}
 // decimal_add
 CharacterVector decimal_add(std::vector<std::string> a1, std::vector<std::string> a2);
 RcppExport SEXP _decimal_decimal_add(SEXP a1SEXP, SEXP a2SEXP) {
@@ -133,6 +144,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_decimal_sum_decimal", (DL_FUNC) &_decimal_sum_decimal, 1},
     {"_decimal_decimal_add", (DL_FUNC) &_decimal_decimal_add, 2},
     {"_decimal_decimal_minus", (DL_FUNC) &_decimal_decimal_minus, 2},
     {"_decimal_decimal_multiply", (DL_FUNC) &_decimal_decimal_multiply, 2},

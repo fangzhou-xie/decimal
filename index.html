@@ -55,7 +55,39 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-Provide decimal class and corresponding arithmetic operations.
+<div class="section level1">
+<div class="page-header"><h1 id="decimal">decimal<a class="anchor" aria-label="anchor" href="#decimal"></a>
+</h1></div>
+<!-- badges: start -->
+
+<p>The goal of decimal is to provide a decimal class and related arithmetic operations.</p>
+<p>Supported operations: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>==</code>, <code>!=</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&gt;</code>.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the development version of decimal from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
+<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"fangzhou-xie/decimal"</span><span class="op">)</span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
+<p>This is a basic example:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">decimal</span><span class="op">)</span>
+<span class="co">## basic example code</span>
+<span class="va">d1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/decimal/man/decimal-package.html" class="external-link">decimal</a></span><span class="op">(</span><span class="st">"0.120000001"</span><span class="op">)</span>
+<span class="va">d2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/decimal/man/decimal-package.html" class="external-link">decimal</a></span><span class="op">(</span><span class="st">"1.232"</span><span class="op">)</span>
+<span class="va">d1</span> <span class="op">+</span> <span class="va">d2</span>
+<span class="co">#&gt; [1] "1.352000001"</span>
+
+<span class="va">f1</span> <span class="op">&lt;-</span> <span class="fl">0.120000001</span>
+<span class="va">f2</span> <span class="op">&lt;-</span> <span class="fl">1.232</span>
+<span class="fu"><a href="https://rdrr.io/r/base/format.html" class="external-link">format</a></span><span class="op">(</span><span class="va">f1</span> <span class="op">+</span> <span class="va">f2</span>, scientific <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; [1] "1.352"</span></code></pre></div>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -82,7 +114,12 @@ Provide decimal class and corresponding arithmetic operations.
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/fangzhou-xie/decimal/actions" class="external-link"><img src="https://github.com/fangzhou-xie/decimal/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
+</ul>
+</div>
 
   </div>
 </div>
